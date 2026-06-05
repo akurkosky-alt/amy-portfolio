@@ -15,22 +15,33 @@ npm run dev
 npm run build
 ```
 
-## Deploy to Vercel
+## Deployment
 
-### Option A — Vercel CLI (fastest)
-```bash
-npm install -g vercel
-vercel
-```
-Follow the prompts. It auto-detects Vite. Accept defaults.
+You can deploy with Vercel (recommended) or Netlify. Both are pre-configured.
 
-### Option B — GitHub + Vercel dashboard
+### Vercel
+Option A — GitHub import (recommended):
 1. Push this folder to a GitHub repo.
 2. Go to [vercel.com](https://vercel.com) → New Project → Import the repo.
-3. Framework: **Vite** (auto-detected).
-4. Build command: `npm run build`
-5. Output directory: `dist`
-6. Click Deploy.
+3. Framework: Vite (auto-detected). Build: `npm run build`. Output: `dist`.
+
+Option B — CLI:
+```bash
+npm run build
+npm run deploy:vercel
+```
+Follow the interactive prompts. The included [vercel.json](vercel.json) uses `dist/`.
+
+### Netlify
+Option A — Website:
+1. New site from Git. Build command: `npm run build`. Publish directory: `dist`. Redirects/SPA handled by [netlify.toml](netlify.toml).
+
+Option B — CLI:
+```bash
+npm run build
+npm run deploy:netlify
+```
+This uses the `dist/` output and redirects in [netlify.toml](netlify.toml).
 
 ## Adding screenshots
 
