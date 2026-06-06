@@ -120,6 +120,7 @@ const projects: Project[] = [
       'Cross-functional stakeholder coordination',
     ],
     tech: ['Notion', 'Zoho Desk', 'Google Workspace', 'Internal Admin Systems', 'Reporting Dashboards', 'LMS', 'Spreadsheet Tooling'],
+    caseStudyHref: '#case-study-ops-infrastructure',
   },
   {
     title: 'Bedlam Social (Bedlam Gaming)',
@@ -142,6 +143,247 @@ const projects: Project[] = [
   },
 ]
 
+function OperationsInfrastructureCaseStudySection() {
+    const diagnosisItems = [
+      {
+        title: 'Single-point dependency',
+        body: 'All exception decisions, cross-team coordination, and student escalations routed informally through one person — with no backup, no documentation, and no defined process.',
+      },
+      {
+        title: 'Undifferentiated work',
+        body: 'Routine delegatable tasks and senior judgment calls were treated identically. Remote operations staff had no framework for knowing what to execute versus what to escalate.',
+      },
+      {
+        title: 'Invisible compliance risk',
+        body: 'Financial exceptions, policy decisions, and student-facing commitments were documented only in ad hoc channels — creating no accountability trail and no precedent governance.',
+      },
+    ]
+
+    const architectureItems = [
+      {
+        number: '01',
+        title: 'SOP Framework',
+        body: 'Documented all delegatable LMS operations — cohort setup, student enrollment, platform invitations, content maintenance, score report intake, and fulfillment workflows — with step-level clarity, naming conventions, and explicit escalation triggers built into each procedure.',
+      },
+      {
+        number: '02',
+        title: 'Escalation Architecture',
+        body: 'Designed a tiered escalation framework distinguishing routine cases from exception cases, mapping financial, policy, cross-team, and student-facing exceptions to a defined owner and resolution path.',
+      },
+      {
+        number: '03',
+        title: 'Role Boundary System',
+        body: 'Documented the boundaries between delegatable operational execution and non-delegatable senior judgment so staff could see which work requires institutional context and authority.',
+      },
+      {
+        number: '04',
+        title: 'Decision Log Standards',
+        body: 'Proposed governance standards so policy decisions are recorded in the relevant support ticket, recurring exception patterns are surfaced to leadership, and individual decisions do not silently become precedent.',
+      },
+    ]
+
+    const artifacts = [
+      'LMS Operations Manual',
+      '5-section SOP library',
+      'Escalation decision framework',
+      'Role boundary definitions',
+      'Onboarding enablement materials',
+      'Glossary & contact directory',
+      'Cohort calendar reference',
+    ]
+
+    const outcomes = [
+      {
+        headline: '0 → 1',
+        body: 'First operational knowledge infrastructure the organization had ever had',
+      },
+      {
+        headline: '4 teams',
+        body: 'Cross-functional alignment across Support, Coaching, Engineering, and Leadership',
+      },
+      {
+        headline: 'Cycle-ready',
+        body: 'Remote staff onboarding framework designed for quarterly exam cycle operations',
+      },
+    ]
+
+    const skillsDemonstrated = [
+      'Operational architecture',
+      'Knowledge management systems',
+      'SOP design & governance',
+      'Escalation framework design',
+      'Role clarity & delegation systems',
+      'Onboarding infrastructure',
+      'Cross-functional coordination',
+      'Compliance risk reduction',
+      'Documentation governance',
+      'Workflow standardization',
+    ]
+
+    return (
+      <section id="case-study-ops-infrastructure" className="space-y-12 scroll-mt-28">
+        <AnimatedSection>
+          <div className="rounded-3xl border border-cyan-900/40 bg-gradient-to-br from-zinc-900/70 via-zinc-900/30 to-cyan-950/10 p-8 md:p-10 space-y-6">
+            <div className="space-y-3">
+              <span className="inline-flex rounded-full border border-cyan-800/40 bg-cyan-950/30 px-3 py-1 text-[10px] font-semibold tracking-widest text-cyan-400 uppercase">
+                Case Study Branch · Operations Architecture
+              </span>
+              <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">
+                Building an Organization&apos;s First Operational Knowledge Infrastructure
+              </h3>
+              <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
+                Designing the SOP framework, escalation architecture, and role boundary system that replaced tribal knowledge with scalable operational governance at a high-growth optometry board exam preparation company.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                ['Industry', 'Optometry Board Exam Prep'],
+                ['Scope', 'LMS · Coaching Ops · Support Escalation'],
+                ['Deliverable', 'Operations Manual + Governance System'],
+                ['Role', 'Student Success Manager / AI Systems Architecture Lead'],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-600">{label}</p>
+                  <p className="mt-1 text-xs font-medium leading-relaxed text-zinc-300">{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4" open>
+            <summary className="grid cursor-pointer items-start gap-8 md:grid-cols-5">
+              <div className="pt-1 md:col-span-1">
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">Challenge</span>
+              </div>
+              <div className="md:col-span-4">
+                <span className="text-sm text-zinc-400">No documented operational infrastructure for a complex, multi-cycle program.</span>
+              </div>
+            </summary>
+
+            <div className="mt-4 grid items-start gap-8 md:grid-cols-5">
+              <div className="pt-1 md:col-span-1" />
+              <div className="space-y-4 md:col-span-4">
+                <p className="text-sm leading-relaxed text-zinc-300">
+                  A multi-cycle optometry board exam preparation company operated a complex program spanning LMS administration, coaching coordination, student support, billing, and engineering — with no documented operational infrastructure.
+                </p>
+                <p className="text-sm leading-relaxed text-zinc-400">
+                  Operational knowledge existed in the heads of a small group of staff, workflows were executed inconsistently, escalation paths were undefined, and the organization&apos;s ability to function was tightly coupled to the availability of a single senior operations person.
+                </p>
+              </div>
+            </div>
+          </details>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4" open>
+            <summary className="grid cursor-pointer items-start gap-8 md:grid-cols-5">
+              <div className="pt-1 md:col-span-1">
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">Diagnosis</span>
+              </div>
+              <div className="md:col-span-4">
+                <span className="text-sm text-zinc-400">Three structural risks were named and mapped before solution design.</span>
+              </div>
+            </summary>
+
+            <div className="mt-4 grid items-start gap-8 md:grid-cols-5">
+              <div className="pt-1 md:col-span-1" />
+              <div className="grid gap-3 md:col-span-4 md:grid-cols-3">
+                {diagnosisItems.map((item) => (
+                  <div key={item.title} className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5">
+                    <h5 className="text-sm font-semibold text-cyan-400">{item.title}</h5>
+                    <p className="mt-2 text-xs leading-relaxed text-zinc-400">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </details>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4" open>
+            <summary className="grid cursor-pointer items-start gap-8 md:grid-cols-5">
+              <div className="pt-1 md:col-span-1">
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">Architecture</span>
+              </div>
+              <div className="md:col-span-4">
+                <span className="text-sm text-zinc-400">A layered system of role boundaries, decision logic, and workflow standards.</span>
+              </div>
+            </summary>
+
+            <div className="mt-4 grid items-start gap-8 md:grid-cols-5">
+              <div className="pt-1 md:col-span-1" />
+              <div className="space-y-5 md:col-span-4">
+                <p className="text-sm leading-relaxed text-zinc-300">
+                  The solution was not a document. It was an operational architecture designed to reduce organizational dependency on informal knowledge transfer.
+                </p>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {architectureItems.map((item) => (
+                    <div key={item.title} className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5">
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-600">{item.number}</p>
+                      <h5 className="mt-1 text-sm font-semibold text-zinc-100">{item.title}</h5>
+                      <p className="mt-2 text-xs leading-relaxed text-zinc-400">{item.body}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {artifacts.map((artifact) => (
+                    <span key={artifact} className="rounded-full border border-cyan-800/30 bg-cyan-950/30 px-3 py-1 text-xs text-cyan-400/90">
+                      {artifact}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </details>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div className="grid items-start gap-8 md:grid-cols-5">
+            <div className="pt-1 md:col-span-1">
+              <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">Outcomes</span>
+            </div>
+            <div className="space-y-5 md:col-span-4">
+              <div className="grid gap-3 md:grid-cols-3">
+                {outcomes.map((outcome) => (
+                  <div key={outcome.headline} className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 text-center">
+                    <p style={{ fontFamily: 'var(--font-display)' }} className="text-3xl font-normal text-cyan-400">{outcome.headline}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-zinc-400">{outcome.body}</p>
+                  </div>
+                ))}
+              </div>
+              <blockquote className="rounded-2xl border-l-2 border-cyan-700/70 bg-zinc-900/30 p-5">
+                <p style={{ fontFamily: 'var(--font-display)' }} className="text-base italic leading-relaxed text-zinc-300">
+                  “This manual documents operational workflows executable by remote operations staff. It does not cover student-facing support, financial case handling, extension decisions, cross-functional coordination, institutional knowledge, or policy exception authority. Those functions require US-based senior operations presence.”
+                </p>
+                <cite className="mt-3 block text-xs not-italic text-zinc-600">— Operations Manual, Role Boundary Definitions section</cite>
+              </blockquote>
+              <p className="text-sm leading-relaxed text-zinc-400">
+                The result is an organization that can distinguish between what it knows and what it doesn&apos;t — the precondition for scaling operational capacity without scaling risk.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div className="grid items-start gap-8 md:grid-cols-5">
+            <div className="pt-1 md:col-span-1">
+              <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">Skills Demonstrated</span>
+            </div>
+            <div className="flex flex-wrap gap-2 md:col-span-4">
+              {skillsDemonstrated.map((skill) => (
+                <span key={skill} className="rounded-full border border-zinc-700 bg-zinc-900/50 px-3 py-1.5 text-xs text-zinc-400">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+    )
+  }
 const projectScreenshots: Screenshot[] = [
   {
     title: 'Embedded Desk Companion App',
@@ -862,6 +1104,11 @@ export default function PortfolioSite() {
 
         {/* ── Case Study ───────────────────────────────────────────────────── */}
         <CaseStudySection />
+        
+        <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+        
+        {/* ── Case Study Branch: Operations Infrastructure ─────────────────── */}
+        <OperationsInfrastructureCaseStudySection />
 
         <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
 
