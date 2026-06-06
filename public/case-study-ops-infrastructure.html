@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study — LMS Operations Infrastructure | Amy Kurkosky-Landis</title>
+  <meta name="description" content="How I designed an organization's first operational knowledge infrastructure: SOP framework, escalation architecture, role boundary system, and onboarding enablement." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Case Study — LMS Operations Infrastructure" />
+  <meta property="og:description" content="Building an organization's first scalable operational knowledge infrastructure from the ground up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://akurkosky.com/case-study-ops-infrastructure.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1E3A5F; --navy-mid:#2C5282; --navy-light:#EBF0F8; --navy-border:#B8CCE4;
+      --text-primary:#1A1A1A; --text-secondary:#555555; --text-muted:#888888;
+      --surface:#FFFFFF; --surface-alt:#F7F8FA; --border:rgba(0,0,0,0.10);
+      --radius-sm:6px; --radius-md:10px; --radius-lg:14px;
+      --font-display:'Playfair Display', Georgia, serif; --font-body:'DM Sans', system-ui, sans-serif;
+      --max-width:860px;
+    }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); background: var(--surface); color: var(--text-primary); line-height: 1.7; }
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0; }
+    .site-nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); border-bottom:0.5px solid var(--border); padding:0 2rem; height:56px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-family:var(--font-body); font-size:13px; font-weight:500; color:var(--text-primary); text-decoration:none; letter-spacing:0.02em; }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { font-size:13px; color:var(--text-secondary); text-decoration:none; font-weight:400; transition:color .15s; }
+    .nav-links a:hover { color: var(--navy); }
+    .hero { max-width:var(--max-width); margin:0 auto; padding:4rem 2rem 2.5rem; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--navy); margin-bottom:1.25rem; }
+    .eyebrow::before { content:''; display:inline-block; width:20px; height:1.5px; background:var(--navy); }
+    .hero-title { font-family:var(--font-display); font-size:clamp(26px,4vw,38px); font-weight:600; line-height:1.2; color:var(--text-primary); max-width:700px; margin-bottom:1rem; }
+    .hero-subtitle { font-size:16px; font-weight:300; color:var(--text-secondary); max-width:620px; line-height:1.7; margin-bottom:2rem; }
+    .meta-strip { max-width:var(--max-width); margin:0 auto; padding:0 2rem; }
+    .meta-strip-inner { display:flex; flex-wrap:wrap; gap:2rem; border-top:.5px solid var(--border); border-bottom:.5px solid var(--border); padding:1.1rem 0; }
+    .meta-item { display:flex; flex-direction:column; gap:3px; }
+    .meta-label { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); font-weight:500; }
+    .meta-value { font-size:13px; font-weight:500; color:var(--text-primary); }
+    .content { max-width:var(--max-width); margin:0 auto; padding:0 2rem; }
+    .cs-section { padding:2.5rem 0; border-bottom:.5px solid var(--border); }
+    .cs-section:last-of-type { border-bottom:none; }
+    .section-label { display:inline-block; font-size:10px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--navy); padding-bottom:.5rem; border-bottom:1.5px solid var(--navy); margin-bottom:1rem; }
+    .body-copy { font-size:15px; font-weight:300; line-height:1.8; color:var(--text-primary); margin-bottom:1rem; }
+    .body-copy + .body-copy { margin-top:0; }
+    .diagnosis-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:1.25rem; }
+    .risk-card { background:var(--surface-alt); border-radius:var(--radius-md); padding:1.1rem 1.2rem; border-left:3px solid var(--navy); }
+    .risk-title { font-size:12.5px; font-weight:500; color:var(--navy); margin-bottom:6px; letter-spacing:.02em; }
+    .risk-desc { font-size:12.5px; font-weight:300; color:var(--text-secondary); line-height:1.55; }
+    .solution-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:1.25rem; }
+    .sol-card { background:var(--surface); border:.5px solid var(--border); border-radius:var(--radius-lg); padding:1.2rem 1.35rem; }
+    .sol-num { font-size:11px; font-weight:500; color:var(--text-muted); margin-bottom:4px; }
+    .sol-title { font-size:14.5px; font-weight:500; color:var(--text-primary); margin-bottom:8px; }
+    .sol-desc { font-size:13px; font-weight:300; color:var(--text-secondary); line-height:1.6; }
+    .artifacts { display:flex; flex-wrap:wrap; gap:8px; margin-top:1.25rem; }
+    .artifact-tag { font-size:12px; font-weight:400; color:var(--navy); background:var(--navy-light); border:.5px solid var(--navy-border); border-radius:var(--radius-sm); padding:4px 12px; }
+    .outcome-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:1.25rem; }
+    .outcome-card { background:var(--surface-alt); border-radius:var(--radius-md); padding:1.25rem 1rem; text-align:center; }
+    .outcome-headline { font-family:var(--font-display); font-size:26px; font-weight:600; color:var(--navy); line-height:1; margin-bottom:6px; }
+    .outcome-desc { font-size:12px; color:var(--text-secondary); line-height:1.45; }
+    .pull-quote { border-left:3px solid var(--navy); padding:1rem 0 1rem 1.5rem; margin:1.5rem 0 0; }
+    .pull-quote p { font-family:var(--font-display); font-style:italic; font-size:15.5px; line-height:1.7; color:var(--text-primary); margin-bottom:.6rem; }
+    .pull-quote cite { font-size:12px; font-style:normal; color:var(--text-muted); font-family:var(--font-body); }
+    .skills-grid { display:flex; flex-wrap:wrap; gap:8px; margin-top:1rem; }
+    .skill-tag { font-size:12.5px; font-weight:400; color:var(--text-secondary); background:var(--surface-alt); border:.5px solid var(--border); border-radius:var(--radius-sm); padding:5px 13px; }
+    .back-section { max-width:var(--max-width); margin:0 auto; padding:2.5rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+    .back-link { font-size:13px; color:var(--navy); text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:6px; transition:gap .15s; }
+    .back-link:hover { gap:10px; }
+    .back-link::before { content:'←'; font-size:14px; }
+    .footer-sig { font-size:11px; color:var(--text-muted); letter-spacing:.06em; text-transform:uppercase; }
+    @media (max-width:680px){ .diagnosis-grid{grid-template-columns:1fr;} .solution-grid{grid-template-columns:1fr;} .outcome-grid{grid-template-columns:1fr 1fr;} .meta-strip-inner{gap:1.25rem;} .nav-links{display:none;} .hero{padding:2.5rem 1.25rem 2rem;} .meta-strip,.content,.back-section{padding-left:1.25rem; padding-right:1.25rem;} }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="/" class="nav-logo">Amy Kurkosky-Landis</a>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Work</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://akurkosky.com/" target="_blank" rel="noopener">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Case study &nbsp;·&nbsp; Operations architecture</p>
+    <h1 class="hero-title">Building an Organization's First Operational Knowledge Infrastructure</h1>
+    <p class="hero-subtitle">
+      Designing the SOP framework, escalation architecture, and role boundary system that replaced tribal knowledge with scalable operational governance at a high-growth optometry board exam preparation company.
+    </p>
+  </header>
+
+  <div class="meta-strip" role="region" aria-label="Project metadata">
+    <div class="meta-strip-inner">
+      <div class="meta-item"><span class="meta-label">Industry</span><span class="meta-value">Optometry Board Exam Prep</span></div>
+      <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-value">LMS · Coaching Ops · Support Escalation</span></div>
+      <div class="meta-item"><span class="meta-label">Deliverable</span><span class="meta-value">Operations Manual + Governance System</span></div>
+      <div class="meta-item"><span class="meta-label">Timeline</span><span class="meta-value">Q2 2026</span></div>
+      <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Student Success Manager / AI Systems Architecture Lead</span></div>
+    </div>
+  </div>
+
+  <main class="content" id="main">
+    <section class="cs-section" aria-labelledby="challenge-heading">
+      <span class="section-label" id="challenge-heading">Challenge</span>
+      <p class="body-copy">A multi-cycle optometry board exam preparation company operated a complex program spanning LMS administration, coaching coordination, student support, billing, and engineering — with no documented operational infrastructure. Operational knowledge existed entirely in the heads of a small group of staff, workflows were executed inconsistently, escalation paths were undefined, and the organization's ability to function was tightly coupled to the availability of a single senior operations person.</p>
+      <p class="body-copy">As student population and operational complexity scaled across quarterly exam cycles, the absence of documented systems created increasing risk — to onboarding velocity, service continuity, and institutional memory.</p>
+    </section>
+
+    <section class="cs-section" aria-labelledby="diagnosis-heading">
+      <span class="section-label" id="diagnosis-heading">Diagnosis</span>
+      <p class="body-copy">Before designing solutions, the underlying failure modes had to be named. Three structural risks were identified and mapped:</p>
+      <div class="diagnosis-grid" role="list">
+        <div class="risk-card" role="listitem"><p class="risk-title">Single-point dependency</p><p class="risk-desc">All exception decisions, cross-team coordination, and student escalations routed informally through one person — with no backup, no documentation, and no defined process.</p></div>
+        <div class="risk-card" role="listitem"><p class="risk-title">Undifferentiated work</p><p class="risk-desc">Routine delegatable tasks and senior judgment calls were treated identically. Remote operations staff had no framework for knowing what to execute versus what to escalate.</p></div>
+        <div class="risk-card" role="listitem"><p class="risk-title">Invisible compliance risk</p><p class="risk-desc">Financial exceptions, policy decisions, and student-facing commitments were documented only in ad hoc channels — creating no accountability trail and no precedent governance.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-section" aria-labelledby="architecture-heading">
+      <span class="section-label" id="architecture-heading">Architecture</span>
+      <p class="body-copy">The solution was not a document. It was an operational architecture — a layered system of role boundaries, decision logic, and workflow standards designed to reduce organizational dependency on informal knowledge transfer.</p>
+      <div class="solution-grid" role="list">
+        <div class="sol-card" role="listitem"><p class="sol-num">01</p><p class="sol-title">SOP Framework</p><p class="sol-desc">Documented all delegatable LMS operations — cohort setup, student enrollment, platform invitations, content maintenance, score report intake, and fulfillment workflows — with step-level clarity, naming conventions, and explicit escalation triggers built into each procedure.</p></div>
+        <div class="sol-card" role="listitem"><p class="sol-num">02</p><p class="sol-title">Escalation Architecture</p><p class="sol-desc">Designed a tiered escalation framework distinguishing routine cases from exception cases, mapping every exception category (financial, policy, cross-team, student-facing) to a defined owner and resolution path — replacing informal ad hoc routing with a structured decision model.</p></div>
+        <div class="sol-card" role="listitem"><p class="sol-num">03</p><p class="sol-title">Role Boundary System</p><p class="sol-desc">Explicitly documented the boundaries between delegatable operational execution and non-delegatable senior judgment — making visible the work that requires on-site presence, institutional context, and organizational authority, protecting those functions from inadvertent delegation.</p></div>
+        <div class="sol-card" role="listitem"><p class="sol-num">04</p><p class="sol-title">Decision Log Standards</p><p class="sol-desc">Proposed governance standards ensuring policy decisions are recorded in the relevant support ticket, recurring exception patterns are surfaced to leadership for policy clarification, and individual decisions are not treated as organization-wide precedents.</p></div>
+      </div>
+      <div class="artifacts" aria-label="Deliverables produced">
+        <span class="artifact-tag">LMS Operations Manual</span>
+        <span class="artifact-tag">5-section SOP library</span>
+        <span class="artifact-tag">Escalation decision framework</span>
+        <span class="artifact-tag">Role boundary definitions</span>
+        <span class="artifact-tag">Onboarding enablement materials</span>
+        <span class="artifact-tag">Glossary &amp; contact directory</span>
+        <span class="artifact-tag">Cohort calendar reference</span>
+      </div>
+    </section>
+
+    <section class="cs-section" aria-labelledby="outcomes-heading">
+      <span class="section-label" id="outcomes-heading">Outcomes</span>
+      <div class="outcome-grid" role="list">
+        <div class="outcome-card" role="listitem"><p class="outcome-headline">0 → 1</p><p class="outcome-desc">First operational knowledge infrastructure the organization had ever had</p></div>
+        <div class="outcome-card" role="listitem"><p class="outcome-headline">4 teams</p><p class="outcome-desc">Cross-functional alignment across Support, Coaching, Engineering, and Leadership</p></div>
+        <div class="outcome-card" role="listitem"><p class="outcome-headline">Cycle-ready</p><p class="outcome-desc">Remote staff onboarding framework designed for quarterly exam cycle operations</p></div>
+      </div>
+      <div class="pull-quote"><p>"This manual documents operational workflows executable by remote operations staff. It does not cover student-facing support, financial case handling, extension decisions, cross-functional coordination, institutional knowledge, or policy exception authority. Those functions require US-based senior operations presence."</p><cite>— Operations Manual, Role Boundary Definitions section</cite></div>
+      <p class="body-copy" style="margin-top: 1.5rem;">The result is an organization that can distinguish between what it knows and what it doesn't — which is the precondition for scaling operational capacity without scaling risk. Remote staff can execute confidently within their scope. Senior operations time is protected for judgment-required work.</p>
+    </section>
+
+    <section class="cs-section" aria-labelledby="skills-heading">
+      <span class="section-label" id="skills-heading">Skills demonstrated</span>
+      <div class="skills-grid" aria-label="Skills demonstrated in this project" role="list">
+        <span class="skill-tag" role="listitem">Operational architecture</span>
+        <span class="skill-tag" role="listitem">Knowledge management systems</span>
+        <span class="skill-tag" role="listitem">SOP design &amp; governance</span>
+        <span class="skill-tag" role="listitem">Escalation framework design</span>
+        <span class="skill-tag" role="listitem">Role clarity &amp; delegation systems</span>
+        <span class="skill-tag" role="listitem">Onboarding infrastructure</span>
+        <span class="skill-tag" role="listitem">Cross-functional coordination</span>
+        <span class="skill-tag" role="listitem">Compliance risk reduction</span>
+        <span class="skill-tag" role="listitem">Documentation governance</span>
+        <span class="skill-tag" role="listitem">Workflow standardization</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="back-section">
+    <a href="/" class="back-link">Back to work</a>
+    <span class="footer-sig">Amy Kurkosky-Landis · 2026</span>
+  </footer>
+</body>
+</html>
