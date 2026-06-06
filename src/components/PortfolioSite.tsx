@@ -428,8 +428,8 @@ function Navbar() {
 
   const links = [
     { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Case Study', href: '#case-study' },
+    { label: 'Systems', href: '#projects' },
+    { label: 'Case Studies', href: '#case-study' },
     { label: 'Philosophy', href: '#philosophy' },
     { label: 'Contact', href: '#contact' },
   ]
@@ -437,7 +437,7 @@ function Navbar() {
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
       <div
-        className="pointer-events-auto flex items-center gap-1 rounded-full px-2 py-2 transition-all duration-300 opacity-30 hover:opacity-100"
+        className="pointer-events-auto flex items-center gap-1 rounded-full px-2 py-2 transition-all duration-300 opacity-90 hover:opacity-100"
         style={{
           background: scrolled ? 'rgba(9,9,11,0.9)' : 'rgba(9,9,11,0.5)',
           backdropFilter: 'blur(12px)',
@@ -933,7 +933,7 @@ export default function PortfolioSite() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="brand-site min-h-screen bg-zinc-950 text-zinc-100">
       <Navbar />
 
       {/* Ambient glow */}
@@ -946,10 +946,10 @@ export default function PortfolioSite() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-24 space-y-20">
 
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
-        <section id="about" className="space-y-8 pt-12">
+        <section id="about" className="brand-hero-card space-y-8 rounded-[2rem] p-8 md:p-12">
           <div className="anim-start animate-fade-in-up">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-700/40 bg-cyan-500/8 px-4 py-1.5 text-xs font-medium tracking-widest text-cyan-400 uppercase">
-              Customer Operations Leader · AI Systems Builder
+              Operational Systems Builder
             </span>
           </div>
 
@@ -958,8 +958,8 @@ export default function PortfolioSite() {
               Amy Kurkosky-Landis
             </h1>
             <h2 className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl">
-              I design AI-enabled workflow systems, internal tooling, and operational infrastructure
-              that help teams scale faster, reduce repetitive work, and improve decision quality.
+              I help organizations scale by turning complex processes, tribal knowledge,
+              and operational friction into systems people can actually use.
             </h2>
           </div>
 
@@ -980,7 +980,7 @@ export default function PortfolioSite() {
               href="#projects"
               className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition-colors duration-200 px-7 py-3 text-base font-semibold text-zinc-950 shadow-lg shadow-cyan-500/30"
             >
-              View Projects
+              View Systems
             </a>
             <a
               href="mailto:amy@kmkoptometry.com?subject=Resume%20Request"
@@ -1009,7 +1009,7 @@ export default function PortfolioSite() {
             <div className="flex items-center justify-between">
               <div>
                 <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-normal text-zinc-100">Built, Not Theorized</h3>
-                <p className="text-zinc-500 text-sm">Selected proof points from production and applied AI initiatives.</p>
+                <p className="text-zinc-500 text-sm">Operational Impact from production and applied AI initiatives.</p>
               </div>
             </div>
 
@@ -1046,7 +1046,7 @@ export default function PortfolioSite() {
           <div className="grid md:grid-cols-5 gap-12 items-start">
             <div className="md:col-span-2 space-y-4">
               <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-3xl font-normal text-zinc-100">
-                Systems Thinking
+                Capabilities
               </h3>
               <p className="text-zinc-400 leading-relaxed text-sm">
                 I identify operational dysfunction — fragmented workflows, tribal knowledge
@@ -1080,7 +1080,7 @@ export default function PortfolioSite() {
           <AnimatedSection>
             <div className="space-y-2">
               <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">
-                Featured Projects
+                Systems I&apos;ve Built
               </h3>
               <p className="text-zinc-500 text-sm max-w-2xl">
                 Production AI systems, applied AI products, operational infrastructure, and workflow
