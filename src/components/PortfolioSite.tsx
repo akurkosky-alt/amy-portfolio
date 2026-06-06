@@ -656,18 +656,18 @@ function ScreenshotCard({ shot, featured = false }: { shot: Screenshot; featured
       )}
       <div className="p-6 space-y-3">
         <h4 style={{ fontFamily: 'var(--font-display)' }} className="text-xl font-normal text-zinc-100">{shot.title}</h4>
-        <div className="grid gap-3 text-sm leading-relaxed md:grid-cols-3">
-          <div className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
+        <div className={`grid gap-3 text-sm leading-relaxed ${featured ? 'md:grid-cols-3' : 'grid-cols-1'}`}>
+          <div className="min-w-0 rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan-400">What You're Seeing</p>
-            <p className="mt-1 text-zinc-300">{shot.title}</p>
+            <p className="mt-1 break-words text-zinc-300">{shot.title}</p>
           </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
+          <div className="min-w-0 rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan-400">Why It Matters</p>
-            <p className="mt-1 text-zinc-400">{shot.description}</p>
+            <p className="mt-1 break-words text-zinc-400">{shot.description}</p>
           </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
+          <div className="min-w-0 rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan-400">Operational Impact</p>
-            <p className="mt-1 text-zinc-400">{shot.annotations.slice(0, 3).join(' · ')}</p>
+            <p className="mt-1 break-words text-zinc-400">{shot.annotations.slice(0, 3).join(' · ')}</p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 pt-1">
