@@ -15,6 +15,12 @@
   --slate: #526070;
   --coral-pop: #D46A3A;
   --octopus-magenta: #AC1A4C;
+  --process-violet: #4B3596;
+  --seafoam: #77E9E6;
+  --amy-primary: #163665;
+  --amy-secondary: #4B3596;
+  --amy-accent: #AC1A4C;
+  --amy-highlight: #77E9E6;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -39,10 +45,31 @@ body {
 
 .brand-site {
   background:
-    radial-gradient(circle at 10% -10%, rgba(36, 131, 179, 0.42), transparent 30rem),
-    radial-gradient(circle at 90% 8%, rgba(75, 53, 150, 0.34), transparent 30rem),
-    linear-gradient(135deg, #071321 0%, var(--octopus-navy) 48%, #0A2134 100%) !important;
+    radial-gradient(circle at 12% 0%, rgba(119, 233, 230, 0.18), transparent 28rem),
+    radial-gradient(circle at 86% 10%, rgba(172, 26, 76, 0.22), transparent 28rem),
+    radial-gradient(circle at 52% 44%, rgba(75, 53, 150, 0.32), transparent 38rem),
+    linear-gradient(135deg, #071321 0%, var(--amy-primary) 42%, #170E36 100%) !important;
   color: var(--pearl) !important;
+}
+
+.brand-site::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(115deg, transparent 0 17%, rgba(119, 233, 230, 0.22) 17.1% 17.25%, transparent 17.35% 100%),
+    linear-gradient(36deg, transparent 0 35%, rgba(203, 159, 191, 0.18) 35.1% 35.25%, transparent 35.35% 100%),
+    radial-gradient(circle at 18% 22%, rgba(119, 233, 230, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 38% 18%, rgba(172, 26, 76, 0.82) 0 1px, transparent 2px),
+    radial-gradient(circle at 64% 30%, rgba(119, 233, 230, 0.85) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 20%, rgba(203, 159, 191, 0.85) 0 1px, transparent 2px),
+    radial-gradient(circle at 28% 62%, rgba(119, 233, 230, 0.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 70%, rgba(172, 26, 76, 0.68) 0 1px, transparent 2px);
+  background-size: 620px 620px;
+  animation: networkDrift 26s linear infinite alternate;
 }
 
 .brand-site .bg-zinc-950 {
@@ -76,13 +103,13 @@ body {
 }
 
 .brand-site [class*="text-cyan"] {
-  color: var(--deep-current) !important;
+  color: var(--amy-highlight) !important;
 }
 
 .brand-site [class*="bg-cyan-500"] {
-  background: linear-gradient(135deg, var(--seafoam-lilac), var(--orchid-current)) !important;
+  background: linear-gradient(135deg, var(--seafoam-lilac), var(--amy-accent)) !important;
   color: var(--pearl) !important;
-  box-shadow: 0 20px 40px rgba(144, 111, 172, 0.28) !important;
+  box-shadow: 0 20px 40px rgba(172, 26, 76, 0.28) !important;
 }
 
 .brand-site [class*="bg-cyan-950"] {
@@ -115,11 +142,33 @@ body {
 
 .brand-site .brand-hero-card {
   background:
-    radial-gradient(circle at 20% 0%, rgba(130, 215, 225, 0.16), transparent 26rem),
-    linear-gradient(135deg, #0A1E34, var(--octopus-navy) 45%, #105C7D 100%) !important;
+    radial-gradient(circle at 15% 8%, rgba(119, 233, 230, 0.18), transparent 25rem),
+    radial-gradient(circle at 82% 16%, rgba(172, 26, 76, 0.24), transparent 24rem),
+    linear-gradient(135deg, #0A1E34, var(--amy-primary) 44%, var(--amy-secondary) 100%) !important;
   color: var(--pearl) !important;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(130, 215, 225, 0.24);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-site .brand-hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(128deg, transparent 0 26%, rgba(119, 233, 230, 0.42) 26.1% 26.25%, transparent 26.35% 100%),
+    linear-gradient(58deg, transparent 0 54%, rgba(203, 159, 191, 0.36) 54.1% 54.25%, transparent 54.35% 100%),
+    radial-gradient(circle at 22% 28%, var(--amy-highlight) 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 20%, var(--seafoam-lilac) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 63% 35%, var(--amy-highlight) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 78% 22%, var(--amy-accent) 0 2px, transparent 3px),
+    radial-gradient(circle at 34% 68%, var(--amy-accent) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 72% 72%, var(--amy-highlight) 0 1.5px, transparent 3px);
+  background-size: 760px 760px;
+  animation: networkDrift 20s ease-in-out infinite alternate;
 }
 
 .brand-site .brand-hero-card [class*="text-zinc"],
@@ -127,11 +176,22 @@ body {
 .brand-site .brand-hero-card h2,
 .brand-site .brand-hero-card span {
   color: var(--pearl) !important;
+  position: relative;
+  z-index: 1;
 }
 
 .brand-site .group:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(22, 54, 101, 0.15);
+}
+
+@keyframes networkDrift {
+  from {
+    transform: translate3d(-1.5rem, -1rem, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5rem, 1rem, 0) scale(1.025);
+  }
 }
 
 /* Grain overlay */

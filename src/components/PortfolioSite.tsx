@@ -428,10 +428,10 @@ function Navbar() {
 
   const links = [
     { label: 'About', href: '#about' },
-    { label: 'Systems', href: '#projects' },
+    { label: 'Transformations', href: '#projects' },
     { label: 'Case Studies', href: '#case-study' },
+    { label: 'How I Work', href: '#how-i-work' },
     { label: 'Philosophy', href: '#philosophy' },
-    { label: 'Contact', href: '#contact' },
   ]
 
   return (
@@ -958,8 +958,8 @@ export default function PortfolioSite() {
               Amy Kurkosky-Landis
             </h1>
             <h2 className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl">
-              I help organizations scale by turning complex processes, tribal knowledge,
-              and operational friction into systems people can actually use.
+              I turn complexity into systems, tribal knowledge into documentation,
+              and friction into scalable operations.
             </h2>
           </div>
 
@@ -980,7 +980,7 @@ export default function PortfolioSite() {
               href="#projects"
               className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition-colors duration-200 px-7 py-3 text-base font-semibold text-zinc-950 shadow-lg shadow-cyan-500/30"
             >
-              View Systems
+              View Transformations
             </a>
             <a
               href="mailto:amy@kmkoptometry.com?subject=Resume%20Request"
@@ -1008,8 +1008,8 @@ export default function PortfolioSite() {
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-normal text-zinc-100">Built, Not Theorized</h3>
-                <p className="text-zinc-500 text-sm">Operational Impact from production and applied AI initiatives.</p>
+                <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-normal text-zinc-100">Pattern Recognition, Made Operational</h3>
+                <p className="text-zinc-500 text-sm">How I identify hidden friction, capture knowledge, and turn messy workflows into usable systems.</p>
               </div>
             </div>
 
@@ -1041,23 +1041,21 @@ export default function PortfolioSite() {
           </div>
         </AnimatedSection>
 
-        {/* ── Systems Thinking ─────────────────────────────────────────────── */}
+        {/* ── How I Work ───────────────────────────────────────────────────── */}
         <AnimatedSection>
-          <div className="grid md:grid-cols-5 gap-12 items-start">
+          <div id="how-i-work" className="grid md:grid-cols-5 gap-12 items-start scroll-mt-28">
             <div className="md:col-span-2 space-y-4">
               <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-3xl font-normal text-zinc-100">
-                Capabilities
+                How I Work
               </h3>
               <p className="text-zinc-400 leading-relaxed text-sm">
-                I identify operational dysfunction — fragmented workflows, tribal knowledge
-                dependency, inconsistent decision-making — and redesign them into scalable systems
-                that teams can actually adopt and sustain.
+                I look for the hidden patterns underneath operational mess: where knowledge lives,
+                where decisions stall, where handoffs break, and where teams are compensating for
+                missing systems with memory, heroics, or vibes.
               </p>
               <p className="text-zinc-400 leading-relaxed text-sm">
-                My work sits at the intersection of AI systems, operational design, process
-                architecture, and AI product implementation. I'm especially interested in governance-minded
-                AI implementation: building systems that improve efficiency and decision quality
-                without sacrificing human oversight or operational clarity.
+                Then I translate that into maps, documentation, workflows, tools, governance,
+                and AI-enabled infrastructure people can actually use.
               </p>
             </div>
             <div className="md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -1080,7 +1078,7 @@ export default function PortfolioSite() {
           <AnimatedSection>
             <div className="space-y-2">
               <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">
-                Systems I&apos;ve Built
+                Operational Transformations
               </h3>
               <p className="text-zinc-500 text-sm max-w-2xl">
                 Production AI systems, applied AI products, operational infrastructure, and workflow
