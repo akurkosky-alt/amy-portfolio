@@ -24,12 +24,12 @@ interface Screenshot {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const credibilitySignals: string[] = [
-  '15+ years operational leadership',
-  'Production AI systems builder',
-  'Support operations transformation',
-  'Workflow automation & internal tooling',
-  'Systems architecture & process design',
-  'Technical implementation leadership',
+  'Reduced organizational dependency on tribal knowledge',
+  'Built production AI workflow infrastructure',
+  'Designed scalable governance and escalation systems',
+  'Created operational visibility and reporting frameworks',
+  'Led cross-functional operational transformation initiatives',
+  'Shipped tools teams actually adopted',
 ]
 
 const skills: string[] = [
@@ -656,7 +656,20 @@ function ScreenshotCard({ shot, featured = false }: { shot: Screenshot; featured
       )}
       <div className="p-6 space-y-3">
         <h4 style={{ fontFamily: 'var(--font-display)' }} className="text-xl font-normal text-zinc-100">{shot.title}</h4>
-        <p className="text-zinc-400 text-sm leading-relaxed">{shot.description}</p>
+        <div className="grid gap-3 text-sm leading-relaxed md:grid-cols-3">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan-400">What You're Seeing</p>
+            <p className="mt-1 text-zinc-300">{shot.title}</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan-400">Why It Matters</p>
+            <p className="mt-1 text-zinc-400">{shot.description}</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-3">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan-400">Operational Impact</p>
+            <p className="mt-1 text-zinc-400">{shot.annotations.slice(0, 3).join(' · ')}</p>
+          </div>
+        </div>
         <div className="flex flex-wrap gap-2 pt-1">
           {shot.annotations.map((item) => (
             <span key={item} className="rounded-full bg-cyan-950/40 border border-cyan-800/30 px-2.5 py-0.5 text-xs text-cyan-400">
@@ -666,6 +679,115 @@ function ScreenshotCard({ shot, featured = false }: { shot: Screenshot; featured
         </div>
       </div>
     </div>
+  )
+}
+
+function FeaturedTransformationSection() {
+  const challengeItems = ['Manual triage', 'Tribal knowledge dependency', 'Inconsistent response quality', 'Disconnected systems']
+  const solutionItems = ['Intake', 'OCR', 'Triage', 'QA', 'Policy interpretation', 'Response generation']
+  const outcomeItems = ['Reduced manual processing', 'Increased consistency', 'Improved visibility', 'Embedded governance into workflow execution', 'Reduced operational friction']
+
+  return (
+    <section className="space-y-6">
+      <AnimatedSection>
+        <div className="rounded-[2rem] border border-cyan-800/30 bg-zinc-900/40 p-8 md:p-10 shadow-2xl shadow-black/20">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_1.4fr]">
+            <div className="space-y-4">
+              <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Featured Transformation</span>
+              <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal leading-tight text-zinc-100">
+                Production AI Operations Platform
+              </h3>
+              <p className="text-sm leading-relaxed text-zinc-400">
+                A full operational workflow platform designed to transform fragmented support operations into scalable infrastructure with governance built into execution.
+              </p>
+              <a href="#case-study" className="inline-flex rounded-xl border border-cyan-800/40 bg-cyan-950/30 px-4 py-2 text-sm font-semibold text-cyan-400 transition hover:border-cyan-600">
+                Read the flagship case study →
+              </a>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/35 p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Challenge</p>
+                <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+                  {challengeItems.map((item) => <li key={item}>› {item}</li>)}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/35 p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Solution</p>
+                <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+                  {solutionItems.map((item) => <li key={item}>› {item}</li>)}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/35 p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Outcomes</p>
+                <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+                  {outcomeItems.map((item) => <li key={item}>› {item}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+    </section>
+  )
+}
+
+function OrganizationsTransformedSection() {
+  const transformations = [
+    ['Operational Infrastructure', 'Built SOP ecosystems, governance frameworks, escalation paths, onboarding systems, and execution standards.'],
+    ['AI Workflow Systems', 'Designed human-in-the-loop AI automation, workflow routing, OCR pipelines, QA controls, and operational tooling.'],
+    ['Knowledge Architecture', 'Converted undocumented institutional knowledge into scalable operational assets.'],
+    ['Customer Operations', 'Improved support workflows, escalation management, customer experience systems, and operational consistency.'],
+    ['Cross-Functional Execution', 'Connected leadership, support, engineering, finance, and coaching teams through shared operational systems.'],
+  ]
+
+  return (
+    <section className="space-y-6">
+      <AnimatedSection>
+        <div className="space-y-2">
+          <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">Organizations I&apos;ve Helped Transform</h3>
+          <p className="max-w-2xl text-sm text-zinc-500">The through-line is scalable organizational infrastructure: systems that reduce dependency, clarify ownership, and make execution repeatable.</p>
+        </div>
+      </AnimatedSection>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+        {transformations.map(([title, body]) => (
+          <AnimatedSection key={title}>
+            <div className="h-full rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
+              <h4 className="text-sm font-semibold text-zinc-100">{title}</h4>
+              <p className="mt-2 text-xs leading-relaxed text-zinc-400">{body}</p>
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ComplexityTranslationSection() {
+  const items = [
+    'Leadership and execution teams',
+    'Technical and non-technical stakeholders',
+    'Policy and operational practice',
+    'Customer needs and internal systems',
+    'Human workflows and AI-enabled processes',
+  ]
+
+  return (
+    <AnimatedSection>
+      <section className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-8 space-y-5">
+        <div className="space-y-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Complexity Translation</span>
+          <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-3xl font-normal text-zinc-100">I translate between the people who define the work and the systems that make it executable.</h3>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {items.map((item) => (
+            <div key={item} className="rounded-xl border border-zinc-800 bg-zinc-950/30 p-4 text-sm text-zinc-300">
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
+    </AnimatedSection>
   )
 }
 
@@ -955,12 +1077,13 @@ export default function PortfolioSite() {
 
           <div className="anim-start animate-fade-in-up delay-200 space-y-4">
             <h1 style={{ fontFamily: 'var(--font-display)' }} className="text-6xl md:text-[5.5rem] leading-[1.1] tracking-tight text-zinc-50">
-              Amy Kurkosky-Landis
+              I Build Operational Systems That Scale Organizations
             </h1>
             <h2 className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl">
-              I turn complexity into systems, tribal knowledge into documentation,
-              and friction into scalable operations.
+              I design the infrastructure behind high-performing teams: AI-enabled workflows,
+              operational governance, knowledge systems, customer operations, and process architecture.
             </h2>
+            <p className="text-sm font-medium tracking-wide text-cyan-400">Transforming operational chaos into scalable systems people can actually use.</p>
           </div>
 
           {/* Fast credibility signals */}
@@ -1003,6 +1126,11 @@ export default function PortfolioSite() {
 
         <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
 
+        {/* ── Featured Transformation ─────────────────────────────────────── */}
+        <FeaturedTransformationSection />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+
         {/* ── Built, Not Theorized (Credibility) ───────────────────────────── */}
         <AnimatedSection>
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 space-y-4">
@@ -1041,6 +1169,11 @@ export default function PortfolioSite() {
           </div>
         </AnimatedSection>
 
+        <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+
+        {/* ── Organizational Transformations ──────────────────────────────── */}
+        <OrganizationsTransformedSection />
+
         {/* ── How I Work ───────────────────────────────────────────────────── */}
         <AnimatedSection>
           <div id="how-i-work" className="grid md:grid-cols-5 gap-12 items-start scroll-mt-28">
@@ -1056,6 +1189,11 @@ export default function PortfolioSite() {
               <p className="text-zinc-400 leading-relaxed text-sm">
                 Then I translate that into maps, documentation, workflows, tools, governance,
                 and AI-enabled infrastructure people can actually use.
+              </p>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                I look for undocumented knowledge, unclear ownership, escalation ambiguity,
+                process bottlenecks, reporting blind spots, and adoption friction — then turn
+                those findings into systems that scale beyond individual contributors.
               </p>
             </div>
             <div className="md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -1140,9 +1278,14 @@ export default function PortfolioSite() {
 
         <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
 
+        {/* ── Complexity Translation ──────────────────────────────────────── */}
+        <ComplexityTranslationSection />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+
         {/* ── Philosophy ───────────────────────────────────────────────────── */}
         <AnimatedSection>
-          <div id="philosophy" className="max-w-2xl space-y-4">
+          <div id="philosophy" className="max-w-3xl space-y-5">
             <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-normal text-zinc-100">
               Operational systems are products.
             </h3>
@@ -1152,6 +1295,20 @@ export default function PortfolioSite() {
               and designed for the humans who actually have to use them every day — not just the
               ones who approved the budget.
             </p>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {[
+                'Documentation is infrastructure.',
+                'Governance enables scale.',
+                'AI should amplify human judgment.',
+                'Every recurring problem deserves a system.',
+                'Operational clarity compounds over time.',
+                'Sustainable systems outperform heroic effort.',
+              ].map((principle) => (
+                <div key={principle} className="rounded-xl border border-zinc-800 bg-zinc-900/30 px-4 py-3 text-sm text-zinc-300">
+                  {principle}
+                </div>
+              ))}
+            </div>
             <p className="text-zinc-600 text-sm italic">
               Also occasionally an artist, cellist, gaming founder, and operational cryptid quietly
               reorganizing workflow ecosystems in the background.
