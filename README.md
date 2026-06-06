@@ -56,3 +56,4 @@ Images will appear in the Platform Interface Showcase section. If images are mis
 ## Customization
 
 All content (skills, projects, screenshots, bio) lives in `src/components/PortfolioSite.tsx` at the top of the file in typed arrays — easy to edit without touching layout code.
+# amy-portfolio
