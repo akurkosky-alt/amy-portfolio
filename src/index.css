@@ -31,18 +31,18 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--sand);
-  color: var(--ink);
+  background-color: #081523;
+  color: var(--pearl);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .brand-site {
   background:
-    radial-gradient(circle at 10% 0%, rgba(130, 215, 225, 0.26), transparent 32rem),
-    radial-gradient(circle at 92% 18%, rgba(203, 159, 191, 0.22), transparent 30rem),
-    var(--sand) !important;
-  color: var(--ink) !important;
+    radial-gradient(circle at 10% -10%, rgba(36, 131, 179, 0.42), transparent 30rem),
+    radial-gradient(circle at 90% 8%, rgba(75, 53, 150, 0.34), transparent 30rem),
+    linear-gradient(135deg, #071321 0%, var(--octopus-navy) 48%, #0A2134 100%) !important;
+  color: var(--pearl) !important;
 }
 
 .brand-site .bg-zinc-950 {
@@ -50,29 +50,29 @@ body {
 }
 
 .brand-site [class*="bg-zinc-900"] {
-  background: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(8, 21, 35, 0.72) !important;
   backdrop-filter: blur(12px);
 }
 
 .brand-site [class*="bg-zinc-800"] {
-  background: rgba(20, 32, 51, 0.08) !important;
+  background: rgba(22, 54, 101, 0.54) !important;
 }
 
 .brand-site [class*="border-zinc"] {
-  border-color: rgba(130, 215, 225, 0.34) !important;
+  border-color: rgba(130, 215, 225, 0.22) !important;
 }
 
 .brand-site [class*="text-zinc-50"],
 .brand-site [class*="text-zinc-100"],
 .brand-site [class*="text-zinc-200"] {
-  color: var(--ink) !important;
+  color: var(--pearl) !important;
 }
 
 .brand-site [class*="text-zinc-300"],
 .brand-site [class*="text-zinc-400"],
 .brand-site [class*="text-zinc-500"],
 .brand-site [class*="text-zinc-600"] {
-  color: var(--slate) !important;
+  color: rgba(252, 252, 252, 0.72) !important;
 }
 
 .brand-site [class*="text-cyan"] {
@@ -80,13 +80,13 @@ body {
 }
 
 .brand-site [class*="bg-cyan-500"] {
-  background: var(--seafoam-lilac) !important;
-  color: var(--ink) !important;
-  box-shadow: 0 20px 40px rgba(22, 54, 101, 0.15) !important;
+  background: linear-gradient(135deg, var(--seafoam-lilac), var(--orchid-current)) !important;
+  color: var(--pearl) !important;
+  box-shadow: 0 20px 40px rgba(144, 111, 172, 0.28) !important;
 }
 
 .brand-site [class*="bg-cyan-950"] {
-  background: rgba(130, 215, 225, 0.18) !important;
+  background: rgba(36, 131, 179, 0.18) !important;
 }
 
 .brand-site [class*="border-cyan"] {
@@ -99,24 +99,27 @@ body {
 }
 
 .brand-site nav > div {
-  background: rgba(252, 252, 252, 0.76) !important;
-  border-color: rgba(22, 54, 101, 0.12) !important;
-  box-shadow: 0 16px 40px rgba(22, 54, 101, 0.12) !important;
+  background: rgba(8, 21, 35, 0.78) !important;
+  border-color: rgba(130, 215, 225, 0.26) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24) !important;
 }
 
 .brand-site nav a {
-  color: var(--ink) !important;
+  color: rgba(252, 252, 252, 0.72) !important;
 }
 
 .brand-site nav a:hover {
-  background: rgba(203, 159, 191, 0.22) !important;
+  background: rgba(172, 26, 76, 0.2) !important;
   color: var(--octopus-magenta) !important;
 }
 
 .brand-site .brand-hero-card {
-  background: linear-gradient(135deg, var(--octopus-navy), var(--deep-current)) !important;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(130, 215, 225, 0.16), transparent 26rem),
+    linear-gradient(135deg, #0A1E34, var(--octopus-navy) 45%, #105C7D 100%) !important;
   color: var(--pearl) !important;
-  box-shadow: 0 30px 70px rgba(22, 54, 101, 0.24);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(130, 215, 225, 0.24);
 }
 
 .brand-site .brand-hero-card [class*="text-zinc"],
