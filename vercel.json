@@ -3,5 +3,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/case-study-ops-infrastructure", "destination": "/case-study-ops-infrastructure.html" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }

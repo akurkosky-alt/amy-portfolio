@@ -2,6 +2,11 @@
 
 A React + TypeScript + Vite portfolio site, deployable to Vercel.
 
+## Links
+
+- Live site: https://akurkosky.com
+- Source repo: https://github.com/akurkosky-alt/amy-portfolio
+
 ## Local development
 
 ```bash
