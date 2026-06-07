@@ -162,23 +162,23 @@ function OperationsInfrastructureCaseStudySection() {
     const architectureItems = [
       {
         number: '01',
-        title: 'SOP Framework',
-        body: 'Documented all delegatable LMS operations — cohort setup, student enrollment, platform invitations, content maintenance, score report intake, and fulfillment workflows — with step-level clarity, naming conventions, and explicit escalation triggers built into each procedure.',
+        title: 'Building Organizational Memory',
+        body: 'Created the first operational knowledge infrastructure supporting Support, Coaching, Engineering, and Leadership — turning undocumented institutional knowledge into reusable operating assets.',
       },
       {
         number: '02',
-        title: 'Escalation Architecture',
-        body: 'Designed a tiered escalation framework distinguishing routine cases from exception cases, mapping financial, policy, cross-team, and student-facing exceptions to a defined owner and resolution path.',
+        title: 'Formal Ownership Paths',
+        body: 'Established ownership paths for financial, policy, cross-team, and student-facing exception handling so operational decisions had clear resolution routes instead of informal escalation loops.',
       },
       {
         number: '03',
-        title: 'Role Boundary System',
-        body: 'Documented the boundaries between delegatable operational execution and non-delegatable senior judgment so staff could see which work requires institutional context and authority.',
+        title: 'Execution Boundaries',
+        body: 'Defined which work could be executed remotely, which work required senior judgment, and where authority lived — reducing ambiguity around delegation and protecting judgment-heavy operations.',
       },
       {
         number: '04',
-        title: 'Decision Log Standards',
-        body: 'Proposed governance standards so policy decisions are recorded in the relevant support ticket, recurring exception patterns are surfaced to leadership, and individual decisions do not silently become precedent.',
+        title: 'Governance Evidence Trail',
+        body: 'Created standards for documenting policy decisions, surfacing recurring exception patterns, and preventing one-off decisions from silently becoming organization-wide precedent.',
       },
     ]
 
@@ -226,13 +226,13 @@ function OperationsInfrastructureCaseStudySection() {
           <div className="rounded-3xl border border-cyan-900/40 bg-gradient-to-br from-zinc-900/70 via-zinc-900/30 to-cyan-950/10 p-8 md:p-10 space-y-6">
             <div className="space-y-3">
               <span className="inline-flex rounded-full border border-cyan-800/40 bg-cyan-950/30 px-3 py-1 text-[10px] font-semibold tracking-widest text-cyan-400 uppercase">
-                Case Study Branch · Operations Architecture
+                Case Study Branch · Organizational Memory
               </span>
               <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">
-                Building an Organization&apos;s First Operational Knowledge Infrastructure
+                Building Organizational Memory
               </h3>
               <p className="max-w-3xl text-sm leading-relaxed text-zinc-400">
-                Designing the SOP framework, escalation architecture, and role boundary system that replaced tribal knowledge with scalable operational governance at a high-growth optometry board exam preparation company.
+                Critical operational knowledge existed in people rather than systems. I designed the infrastructure that made execution less dependent on individual staff members: documentation, escalation design, governance, and onboarding architecture.
               </p>
             </div>
 
@@ -309,7 +309,7 @@ function OperationsInfrastructureCaseStudySection() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">Architecture</span>
               </div>
               <div className="md:col-span-4">
-                <span className="text-sm text-zinc-400">A layered system of role boundaries, decision logic, and workflow standards.</span>
+                <span className="text-sm text-zinc-400">A governance model for converting undocumented institutional knowledge into scalable operational assets.</span>
               </div>
             </summary>
 
@@ -317,7 +317,7 @@ function OperationsInfrastructureCaseStudySection() {
               <div className="pt-1 md:col-span-1" />
               <div className="space-y-5 md:col-span-4">
                 <p className="text-sm leading-relaxed text-zinc-300">
-                  The solution was not a document. It was an operational architecture designed to reduce organizational dependency on informal knowledge transfer.
+                  The solution was not a documentation project. It was an organizational memory system: a way to capture what the company knew, clarify who owned decisions, and make recurring execution repeatable.
                 </p>
                 <div className="grid gap-3 md:grid-cols-2">
                   {architectureItems.map((item) => (
@@ -682,10 +682,52 @@ function ScreenshotCard({ shot, featured = false }: { shot: Screenshot; featured
   )
 }
 
+function WhatIBuildSection() {
+  const buildAreas = [
+    {
+      title: 'AI Operations Infrastructure',
+      body: 'Workflow automation, governance, QA systems, operational tooling, and human-in-the-loop execution models that help teams move faster without losing control.',
+    },
+    {
+      title: 'Knowledge Infrastructure',
+      body: 'Documentation systems, SOP ecosystems, onboarding assets, and institutional memory structures that reduce reliance on tribal knowledge.',
+    },
+    {
+      title: 'Organizational Systems',
+      body: 'Escalation design, process architecture, cross-functional ownership paths, and execution standards that make operations more scalable and less person-dependent.',
+    },
+  ]
+
+  return (
+    <section className="space-y-6">
+      <AnimatedSection>
+        <div className="space-y-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">What I Build</span>
+          <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">
+            Operational infrastructure for teams that need to scale.
+          </h3>
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-500">
+            My work turns operational complexity into systems: clearer decisions, repeatable workflows, documented knowledge, and tooling people can actually adopt.
+          </p>
+        </div>
+      </AnimatedSection>
+      <div className="grid gap-4 md:grid-cols-3">
+        {buildAreas.map((area) => (
+          <AnimatedSection key={area.title}>
+            <div className="h-full rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
+              <h4 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-normal text-zinc-100">{area.title}</h4>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">{area.body}</p>
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function FeaturedTransformationSection() {
-  const challengeItems = ['Manual triage', 'Tribal knowledge dependency', 'Inconsistent response quality', 'Disconnected systems']
-  const solutionItems = ['Intake', 'OCR', 'Triage', 'QA', 'Policy interpretation', 'Response generation']
-  const outcomeItems = ['Reduced manual processing', 'Increased consistency', 'Improved visibility', 'Embedded governance into workflow execution', 'Reduced operational friction']
+  const beforeItems = ['Manual triage', 'Tribal knowledge dependency', 'Inconsistent quality', 'Limited visibility']
+  const afterItems = ['AI workflow orchestration', 'Embedded governance', 'Human-in-the-loop QA', 'Operational reporting']
 
   return (
     <section className="space-y-6">
@@ -697,31 +739,28 @@ function FeaturedTransformationSection() {
               <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal leading-tight text-zinc-100">
                 Production AI Operations Platform
               </h3>
+              <p className="text-lg font-semibold leading-relaxed text-zinc-100">
+                Built to replace fragmented support operations with scalable AI-enabled execution infrastructure.
+              </p>
               <p className="text-sm leading-relaxed text-zinc-400">
-                A full operational workflow platform designed to transform fragmented support operations into scalable infrastructure with governance built into execution.
+                Designed as an operational system, not just a tool: intake, triage, OCR, QA, policy interpretation, response generation, and governance integrated into one execution model.
               </p>
               <a href="#case-study" className="inline-flex rounded-xl border border-cyan-800/40 bg-cyan-950/30 px-4 py-2 text-sm font-semibold text-cyan-400 transition hover:border-cyan-600">
                 Read the flagship case study →
               </a>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-zinc-800 bg-zinc-950/35 p-5">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Challenge</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Before</p>
                 <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                  {challengeItems.map((item) => <li key={item}>› {item}</li>)}
+                  {beforeItems.map((item) => <li key={item}>› {item}</li>)}
                 </ul>
               </div>
               <div className="rounded-2xl border border-zinc-800 bg-zinc-950/35 p-5">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Solution</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">After</p>
                 <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                  {solutionItems.map((item) => <li key={item}>› {item}</li>)}
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/35 p-5">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-zinc-500">Outcomes</p>
-                <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                  {outcomeItems.map((item) => <li key={item}>› {item}</li>)}
+                  {afterItems.map((item) => <li key={item}>› {item}</li>)}
                 </ul>
               </div>
             </div>
@@ -1123,6 +1162,11 @@ export default function PortfolioSite() {
             </button>
           </div>
         </section>
+
+        <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+
+        {/* ── What I Build ────────────────────────────────────────────────── */}
+        <WhatIBuildSection />
 
         <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
 

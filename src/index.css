@@ -34,9 +34,9 @@ body {
 
 .brand-site {
   background:
-    radial-gradient(circle at 16% 0%, rgba(221, 112, 87, 0.1), transparent 26rem),
-    radial-gradient(circle at 82% 10%, rgba(244, 169, 113, 0.08), transparent 28rem),
-    linear-gradient(135deg, #17141F 0%, var(--raisin-black) 46%, #151B24 100%) !important;
+    radial-gradient(circle at 18% 0%, rgba(221, 112, 87, 0.07), transparent 24rem),
+    radial-gradient(circle at 82% 10%, rgba(244, 169, 113, 0.05), transparent 26rem),
+    linear-gradient(135deg, #111018 0%, #191722 48%, #111820 100%) !important;
   color: var(--pearl) !important;
 }
 
