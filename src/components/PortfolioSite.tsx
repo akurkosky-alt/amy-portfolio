@@ -802,6 +802,36 @@ function OperationalScopeSection() {
   )
 }
 
+function OperationalSignalsSection() {
+  const signals = [
+    'One person knows everything',
+    'Teams create workarounds instead of workflows',
+    'Escalations rely on memory',
+    'Policy decisions are inconsistent',
+    'Reporting requires manual investigation',
+    'Important knowledge lives in Slack',
+  ]
+
+  return (
+    <AnimatedSection>
+      <section className="max-w-3xl space-y-4">
+        <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Operational Signals I Watch For</span>
+        <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2">
+          {signals.map((signal) => (
+            <div key={signal} className="flex gap-2 text-sm leading-relaxed text-zinc-300">
+              <span className="text-cyan-400">›</span>
+              <span>{signal}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm leading-relaxed text-zinc-300">
+          These signals usually indicate deeper infrastructure problems. My work is identifying the root cause and designing systems that remove dependency on individual knowledge and heroics.
+        </p>
+      </section>
+    </AnimatedSection>
+  )
+}
+
 function ComplexityTranslationSection() {
   const items = [
     'Leadership and execution teams',
@@ -928,7 +958,7 @@ function CaseStudySection() {
         <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4">
           <summary className="grid md:grid-cols-5 gap-8 items-start cursor-pointer">
             <div className="md:col-span-1 pt-1">
-              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">The Problem</span>
+              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">Problem Pattern</span>
             </div>
             <div className="md:col-span-4">
               <span className="text-zinc-400 text-sm">Manual triage, fragmented systems, and high cognitive load on staff.</span>
@@ -968,7 +998,7 @@ function CaseStudySection() {
         <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4">
           <summary className="grid md:grid-cols-5 gap-8 items-start cursor-pointer">
             <div className="md:col-span-1 pt-1">
-              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">The Approach</span>
+              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">What Was Actually Happening</span>
             </div>
             <div className="md:col-span-4">
               <span className="text-zinc-400 text-sm">Human-in-the-loop governance, confidence scoring, and QA checkpoints.</span>
@@ -1004,7 +1034,7 @@ function CaseStudySection() {
         <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4">
           <summary className="grid md:grid-cols-5 gap-8 items-start cursor-pointer">
             <div className="md:col-span-1 pt-1">
-              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">What I Built</span>
+              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">System Built</span>
             </div>
             <div className="md:col-span-4">
               <span className="text-zinc-400 text-sm">Centralized dashboard, embedded desk companion, and governance & QA infrastructure.</span>
@@ -1032,7 +1062,7 @@ function CaseStudySection() {
         <details className="group rounded-2xl border border-zinc-800 bg-zinc-900/30 p-4">
           <summary className="grid md:grid-cols-5 gap-8 items-start cursor-pointer">
             <div className="md:col-span-1 pt-1">
-              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">The Outcome</span>
+              <span className="text-xs font-semibold tracking-widest text-zinc-600 uppercase">Organizational Result</span>
             </div>
             <div className="md:col-span-4">
               <span className="text-zinc-400 text-sm">Reduced manual work, standardized routing, and stronger QA governance.</span>
@@ -1116,11 +1146,10 @@ export default function PortfolioSite() {
 
           <div className="anim-start animate-fade-in-up delay-200 space-y-4">
             <h1 style={{ fontFamily: 'var(--font-display)' }} className="text-6xl md:text-[5.5rem] leading-[1.1] tracking-tight text-zinc-50">
-              I Build Operational Systems That Scale Organizations
+              I Make Invisible Operational Problems Visible
             </h1>
             <h2 className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl">
-              I design the infrastructure behind high-performing teams: AI-enabled workflows,
-              operational governance, knowledge systems, customer operations, and process architecture.
+              I find the hidden patterns that keep organizations from scaling — then translate ambiguity, tribal knowledge, and operational friction into infrastructure people can actually use.
             </h2>
             <p className="max-w-3xl text-base leading-relaxed text-zinc-300">
               I translate chaos into systems, tribal knowledge into infrastructure, policy into execution, and AI capability into usable workflows.
@@ -1220,6 +1249,11 @@ export default function PortfolioSite() {
 
         {/* ── Operational Scope ───────────────────────────────────────────── */}
         <OperationalScopeSection />
+
+        <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+
+        {/* ── Operational Signals ─────────────────────────────────────────── */}
+        <OperationalSignalsSection />
 
         {/* ── How I Work ───────────────────────────────────────────────────── */}
         <AnimatedSection>

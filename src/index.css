@@ -71,7 +71,7 @@ body {
 .brand-site [class*="text-zinc-400"],
 .brand-site [class*="text-zinc-500"],
 .brand-site [class*="text-zinc-600"] {
-  color: rgba(252, 252, 252, 0.72) !important;
+  color: rgba(252, 252, 252, 0.8) !important;
 }
 
 .brand-site [class*="text-cyan"] {
@@ -137,6 +137,18 @@ body {
 .brand-site .group:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(22, 54, 101, 0.15);
+}
+
+.brand-site section > div:first-child span[class*="uppercase"],
+.brand-site section > span[class*="uppercase"] {
+  display: inline-flex;
+  width: fit-content;
+  border-bottom: 1px solid rgba(244, 169, 113, 0.45);
+  padding-bottom: 0.35rem;
+}
+
+.brand-site .space-y-20 > * + * {
+  margin-top: 4.25rem !important;
 }
 
 /* Grain overlay */
