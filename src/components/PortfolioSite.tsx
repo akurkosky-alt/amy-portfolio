@@ -104,13 +104,13 @@ const projects: Project[] = [
     title: 'Operational Documentation & SOP Systems',
     subtitle: 'Scalable Knowledge Infrastructure',
     description:
-      'Diagnosed a knowledge infrastructure gap — no standardized SOPs, inconsistent escalation paths, undocumented tribal knowledge — and built the organization\'s first end-to-end operational documentation and governance framework.',
+      'Replaced undocumented operational dependency with a repeatable governance framework supporting support, coaching, finance, engineering, and LMS operations.',
     highlights: [
-      "Designed and built the organization's first SOP documentation framework from scratch",
-      'Created QA governance systems, escalation structures, and compliance checkpoints',
-      'Standardized ticket categorization, routing logic, and reporting systems',
-      'Built coaching enablement resources and onboarding workflow materials',
-      'Reduced knowledge transfer friction and improved new staff adoption speed',
+      "Created the organization's first operational knowledge infrastructure across support, coaching, engineering, and leadership",
+      'Established formal ownership paths for financial, policy, and student-facing exception handling',
+      'Converted recurring execution knowledge into reusable systems, onboarding assets, and governance standards',
+      'Reduced operational reliance on individual staff memory and informal Slack-based knowledge transfer',
+      'Improved staff onboarding readiness for recurring quarterly exam-cycle operations',
     ],
     role: [
       'Documentation architecture & framework design',
@@ -163,7 +163,7 @@ function OperationsInfrastructureCaseStudySection() {
       {
         number: '01',
         title: 'Building Organizational Memory',
-        body: 'Created the first operational knowledge infrastructure supporting Support, Coaching, Engineering, and Leadership — turning undocumented institutional knowledge into reusable operating assets.',
+        body: 'Replaced undocumented operational dependency with a repeatable knowledge infrastructure supporting Support, Coaching, Finance, Engineering, and LMS operations.',
       },
       {
         number: '02',
@@ -195,7 +195,7 @@ function OperationsInfrastructureCaseStudySection() {
     const outcomes = [
       {
         headline: '0 → 1',
-        body: 'First operational knowledge infrastructure the organization had ever had',
+        body: 'First operational knowledge infrastructure spanning support, coaching, finance, engineering, and LMS operations',
       },
       {
         headline: '4 teams',
@@ -1401,8 +1401,7 @@ export default function PortfolioSite() {
               ))}
             </div>
             <p className="text-zinc-600 text-sm italic">
-              Also occasionally an artist, cellist, gaming founder, and operational cryptid quietly
-              reorganizing workflow ecosystems in the background.
+              Amy builds operational systems that help organizations scale.
             </p>
           </div>
         </AnimatedSection>
