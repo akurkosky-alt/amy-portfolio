@@ -771,29 +771,29 @@ function FeaturedTransformationSection() {
   )
 }
 
-function OrganizationsTransformedSection() {
-  const transformations = [
-    ['Operational Infrastructure', 'Built SOP ecosystems, governance frameworks, escalation paths, onboarding systems, and execution standards.'],
-    ['AI Workflow Systems', 'Designed human-in-the-loop AI automation, workflow routing, OCR pipelines, QA controls, and operational tooling.'],
-    ['Knowledge Architecture', 'Converted undocumented institutional knowledge into scalable operational assets.'],
-    ['Customer Operations', 'Improved support workflows, escalation management, customer experience systems, and operational consistency.'],
-    ['Cross-Functional Execution', 'Connected leadership, support, engineering, finance, and coaching teams through shared operational systems.'],
+function OperationalScopeSection() {
+  const scopeItems = [
+    'Multi-department operational ownership',
+    'Support, coaching, engineering, and finance coordination',
+    'Thousands of student support interactions annually',
+    'Complex policy and compliance workflows',
+    'AI-enabled production support operations',
   ]
 
   return (
     <section className="space-y-6">
       <AnimatedSection>
         <div className="space-y-2">
-          <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">Organizations I&apos;ve Helped Transform</h3>
-          <p className="max-w-2xl text-sm text-zinc-500">The through-line is scalable organizational infrastructure: systems that reduce dependency, clarify ownership, and make execution repeatable.</p>
+          <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Operational Scope</span>
+          <h3 style={{ fontFamily: 'var(--font-display)' }} className="text-4xl font-normal text-zinc-100">The problems were organizational, not task-level.</h3>
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-500">The work sat across functions, policies, systems, and recurring student-facing operations — the kind of operating environment where undocumented knowledge becomes business risk.</p>
         </div>
       </AnimatedSection>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-        {transformations.map(([title, body]) => (
-          <AnimatedSection key={title}>
-            <div className="h-full rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5">
-              <h4 className="text-sm font-semibold text-zinc-100">{title}</h4>
-              <p className="mt-2 text-xs leading-relaxed text-zinc-400">{body}</p>
+      <div className="grid gap-3 md:grid-cols-5">
+        {scopeItems.map((item) => (
+          <AnimatedSection key={item}>
+            <div className="h-full rounded-2xl border border-zinc-800 bg-zinc-900/30 p-5 text-sm leading-relaxed text-zinc-300">
+              {item}
             </div>
           </AnimatedSection>
         ))}
@@ -1122,6 +1122,9 @@ export default function PortfolioSite() {
               I design the infrastructure behind high-performing teams: AI-enabled workflows,
               operational governance, knowledge systems, customer operations, and process architecture.
             </h2>
+            <p className="max-w-3xl text-base leading-relaxed text-zinc-300">
+              I translate chaos into systems, tribal knowledge into infrastructure, policy into execution, and AI capability into usable workflows.
+            </p>
             <p className="text-sm font-medium tracking-wide text-cyan-400">Transforming operational chaos into scalable systems people can actually use.</p>
           </div>
 
@@ -1215,8 +1218,8 @@ export default function PortfolioSite() {
 
         <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
 
-        {/* ── Organizational Transformations ──────────────────────────────── */}
-        <OrganizationsTransformedSection />
+        {/* ── Operational Scope ───────────────────────────────────────────── */}
+        <OperationalScopeSection />
 
         {/* ── How I Work ───────────────────────────────────────────────────── */}
         <AnimatedSection>
@@ -1240,15 +1243,25 @@ export default function PortfolioSite() {
                 those findings into systems that scale beyond individual contributors.
               </p>
             </div>
-            <div className="md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {skills.map((skill) => (
-                <div
-                  key={skill}
-                  className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-3 py-2.5 text-xs text-zinc-400 transition-colors duration-200 hover:border-zinc-700 hover:text-zinc-200"
-                >
-                  {skill}
-                </div>
-              ))}
+            <div className="md:col-span-3">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-3">What I Look For</h4>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {[
+                  'Knowledge trapped in people',
+                  'Undefined ownership',
+                  'Escalation ambiguity',
+                  'Workflow bottlenecks',
+                  'Reporting blind spots',
+                  'Tool adoption friction',
+                ].map((signal) => (
+                  <div
+                    key={signal}
+                    className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-3 py-2.5 text-xs text-zinc-400 transition-colors duration-200 hover:border-zinc-700 hover:text-zinc-200"
+                  >
+                    {signal}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </AnimatedSection>
